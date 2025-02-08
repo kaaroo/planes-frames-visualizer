@@ -6,3 +6,12 @@ export type PlaneFrame = {
     alt: number
     timestamp: string
 }
+
+export type PlaneLastFramesMap = {
+    [key: string] : PlaneFrame
+}
+
+export type PlaneFrameHistoryMap = {
+    [key: string] : PlaneFrame[]
+}
+
