@@ -1,9 +1,8 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 import * as L from 'leaflet';
 import { PlaneFrameGenerator } from '../../service/plane-frame-gen.service';
-import { PlaneFrameHistoryMap, PlaneLastFramesMap } from '../../model/planeframe.type';
-import { last } from 'rxjs';
+import { PlaneLastFramesMap } from '../../model/planeframe.type';
 
 
 const LEAFLET_TITLE_LAYER = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
@@ -32,14 +31,8 @@ export class PlanesMapComponent implements OnInit {
     this.planeFrameGen.newFramesGeneration.subscribe(this.onPlanesPositionUpdate);
   }
 
-  // private defaultIcon: L.Icon = L.icon({
-  //   iconUrl: './assets/leaflet/imageAirplane.png', // TODO change to airplane icon
-  //   // iconSize: [410, 510],
-  //   // iconAnchor: [200, 510]
-  // });
-
   configMap() {
-    // L.Marker.prototype.options.icon = this.defaultIcon;
+    // TODO change default icon
     this.map = L.map('map', {}).setView(
       [LEAFLET_MAP_CENTER[0], LEAFLET_MAP_CENTER[1]],
       LEAFLET_MAP_ZOOM
@@ -57,7 +50,7 @@ export class PlanesMapComponent implements OnInit {
       });
 
       this.markers = Object.entries(newValue || {}).reduce((acc, [icao, lastFrame]) => {
-        const newMarker = L.marker([lastFrame.lat, lastFrame.lon], { title: icao });
+        const newMarker = L.marker([lastFrame.lat, lastFrame.lon], { title: icao, shadowUrl: undefined } as L.BaseIconOptions);
         const toolTip = `
           icao: ${icao} <br>
           alt: ${lastFrame.alt} [m] <br>
