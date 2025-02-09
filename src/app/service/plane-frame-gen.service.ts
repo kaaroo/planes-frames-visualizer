@@ -10,11 +10,11 @@ var MIN_SPEED_KM_H = 0
 
 var MIN_LONGITUDE = 0
 var MAX_LONGITUDE = 180
-var LONGIUDE_STEP = 3
+var LONGIUDE_STEP = 7
 
 var MIN_LATITUDE = -90
 var MAX_LATITUDE = 90
-var LATITUDE_STEP = 3
+var LATITUDE_STEP = 7
 
 var MAX_ALT_METERS = 40000
 var MIN_ALT_METERS = 0
@@ -79,7 +79,7 @@ export class PlaneFrameGenerator {
   private getLastPlanePosition = (icao: string): PlaneFrame | undefined => { // TODO move to the history service?
     const planeHistory: PlaneFrame[] = this.historyService.historicPlanesPositions[`${icao}`];
 
-    return (planeHistory || []).length > 0 ? planeHistory[-1] : undefined;
+    return (planeHistory || []).length > 0 ? planeHistory[planeHistory.length-1] : undefined;
   }
 
   private genLongitudeFromPrev = (icao: string): number => {
