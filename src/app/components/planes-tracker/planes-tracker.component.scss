@@ -1,0 +1,21 @@
+#planes-tracker-dashboard {
+
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    > div.planes-tracker-item {
+        display: flex; 
+        flex-basis: calc(50% - 40px);  
+        justify-content: center;
+        flex-direction: column; 
+
+    }
+
+    .box1 { background-color: lightgrey; }
+    .box2 { background-color: lightyellow; }
+    .box3 { background-color: floralwhite; }
+    .box4 { background-color: lightpink; }
+
+}

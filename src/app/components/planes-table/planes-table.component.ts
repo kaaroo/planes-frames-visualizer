@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 
 import {MatTableModule} from '@angular/material/table';
 import { PlaneFrameGenerator } from '../../service/plane-frame-gen.service';
@@ -6,6 +6,7 @@ import { PlaneFrame, PlaneFrameHistoryMap } from '../../model/planeframe.type';
 import { FormsModule } from '@angular/forms';
 import { FilterPlanesFramesPipe } from '../../pipes/filter-planes-frames.pipe';
 
+type SpeedUnit = 'km/h' | 'miles/h'
 
 @Component({
   selector: 'app-planes-table',
@@ -17,10 +18,12 @@ import { FilterPlanesFramesPipe } from '../../pipes/filter-planes-frames.pipe';
 export class PlanesTableComponent implements OnInit {
 
   // filter input
-  searchTerm = signal('');
-  filterByICAO = signal<boolean>(true);
+  protected searchTerm = signal('');
+  protected filterByICAO = signal<boolean>(false);
+  speedUnit = signal<SpeedUnit>('km/h');
 
   // table settings
+  tableTitle = "Planes positions";
   displayedColumns: string[] = ['icao', 'alt', 'lat', 'lon', 'speed', 'timestamp'];
   dataSource = signal<PlaneFrame[]>([]);
   maxNumberOfRows = signal<number>(5);
