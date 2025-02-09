@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { PlaneFrame, PlaneLastFramesMap } from '../model/planeframe.type';
 import { PlanesHistoryService } from './plane-frame-history.service';
 
@@ -69,6 +69,8 @@ export class PlaneFrameGenerator {
   planeICAOs = <string[]>([]);
   historyService!: PlanesHistoryService;
 
+  @Output() newFramesGeneration = new EventEmitter<PlaneLastFramesMap>();
+
   constructor() {
     this.planeICAOs = genPlaneIcaos(PLANES_ICAO_COUNT);
     this.historyService = new PlanesHistoryService();
@@ -130,6 +132,7 @@ export class PlaneFrameGenerator {
       [[icao], this.generatePlaneFrame(icao)]));
 
     this.historyService.handleSaveNewFrames(frames);
+    this.newFramesGeneration.emit(frames)
 
     return frames;
   }
