@@ -22,6 +22,8 @@ var ALT_STEP = 200
 
 var SCHEDULERS_INTERVAL_S = 1
 
+var PLANES_ICAO_COUNT = 5;
+
 const available_characters = 'ABCDEFGHIJKLMNPQRSTUVWXYZ';
 const number_of_options = available_characters.length;
 
@@ -68,7 +70,7 @@ export class PlaneFrameGenerator {
   historyService!: PlanesHistoryService;
 
   constructor() {
-    this.planeICAOs = genPlaneIcaos(5);
+    this.planeICAOs = genPlaneIcaos(PLANES_ICAO_COUNT);
     this.historyService = new PlanesHistoryService();
 
     setInterval(() => { this.generatePlaneFrames() }, SCHEDULERS_INTERVAL_S * 1000);
