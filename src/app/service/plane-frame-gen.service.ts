@@ -4,8 +4,7 @@ import { PlanesHistoryService } from './plane-frame-history.service';
 
 // TODO create constants & utils module and move those to utils
 
-var MAX_SPEED_KM_S = (300000 * 3) / 4;
-var MAX_SPEED_KM_H = 3600 * MAX_SPEED_KM_S;
+var MAX_SPEED_KM_H = 2200;
 var MIN_SPEED_KM_H = 0;
 
 var MIN_LONGITUDE = 0;
@@ -132,7 +131,7 @@ export class PlaneFrameGenerator {
       alt: this.genAltitudeFromPrev(icao),
       lon: this.genLongitudeFromPrev(icao),
       lat: this.genLatitudeFromPrev(icao),
-      timestamp: new Date().toUTCString(),
+      timestamp: new Date().toLocaleString(),
     } as PlaneFrame);
 
   generatePlaneFrames(): PlaneLastFramesMap {

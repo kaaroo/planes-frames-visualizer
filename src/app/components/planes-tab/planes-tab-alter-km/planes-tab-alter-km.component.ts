@@ -22,5 +22,5 @@ import { DecimalPipe } from '@angular/common';
   styleUrl: './../planes-table/planes-table.component.scss',
 })
 export class PlanesTabAlterKmComponent extends PlanesTableComponent {
-  override tableTitle = 'AlternativePlanesTab';
+  override tableTitle = 'Alternative planes positions (Kph)';
 }

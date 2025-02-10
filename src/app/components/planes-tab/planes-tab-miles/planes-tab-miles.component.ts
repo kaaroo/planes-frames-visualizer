@@ -21,6 +21,6 @@ import { DecimalPipe } from '@angular/common';
   styleUrl: './../planes-table/planes-table.component.scss',
 })
 export class PlanesTabMilesComponent extends PlanesTableComponent {
-  override tableTitle = 'PlanesTabMph';
+  override tableTitle = 'Planes positions (Mph)';
   override speedUnit = signal<SpeedUnit>('mph');
 }

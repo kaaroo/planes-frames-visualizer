@@ -1,3 +1,15 @@
 div.planes-table {
   font-family: inherit;
+  font-size: small;
+
+  >div.planes-table__filter-placeholder {
+    margin-bottom: 8px;
+    min-height: 20px;
+    font-size: small;
+    
+    input {
+      border-radius: 5px;
+      border: 1px solid lightgrey;
+    }
+  }
 }

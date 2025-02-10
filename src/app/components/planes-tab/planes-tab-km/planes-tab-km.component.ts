@@ -21,5 +21,5 @@ import { DecimalPipe } from '@angular/common';
 })
 export class PlanesTabKmComponent extends PlanesTableComponent {
   override filterByICAO = signal<boolean>(true);
-  override tableTitle = 'PlanesTabKph';
+  override tableTitle = 'Planes positions (Kph)';
 }

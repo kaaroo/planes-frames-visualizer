@@ -1,6 +1,6 @@
 <div class="planes-table" >
 
-    <h1>{{tableTitle}}</h1>
+    <h3>{{tableTitle}}</h3>
     <div class="planes-table__filter-placeholder">
         @if(filterByICAO()){
             <form class="filter-form">
@@ -11,7 +11,9 @@
             </form>
         }
     </div>
-
+    @if((dataSource()||[]).length == 0){
+        <p>Data loading...</p>
+    }
     <div class="planes-table__table"> 
         <table mat-table [dataSource]="dataSource() | filterPlanesFrames : searchTerm(): maxNumberOfRows() | speedConversionPlaneFrames: speedUnit() " class="mat-elevation-z8">
         

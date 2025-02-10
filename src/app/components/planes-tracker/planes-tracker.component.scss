@@ -1,27 +1,21 @@
 #planes-tracker-dashboard {
-
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    border: 2px solid lightblue;
+    flex-direction: column;
+    justify-content: center;
 
-    > div.planes-tracker-item {
+    > div.planes-tracker-dashboard__group {
         display: flex; 
-        flex-basis: calc(50% - 40px);  
-        justify-content: center;
-        flex-direction: column; 
-        border: 2px solid grey;
+        flex-direction: row; 
         margin: auto;
-        padding: 32px;
+        justify-content: center;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
 
-        // min-height: 296px;
-        // width: 400px;
+        > div.planes-tracker-item {
+            margin: 5px;
+            padding: 5px;
+        }
     }
-
-    .box1 { border-color: lightgrey; }
-    .box2 { border-color: lightyellow; }
-    .box3 { border-color: floralwhite; }
-    .box4 { border-color: lightpink; }
-
 }
