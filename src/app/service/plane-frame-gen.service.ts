@@ -71,6 +71,7 @@ export class PlaneFrameGenerator {
 
   @Output() newFramesGeneration = new EventEmitter<PlaneLastFramesMap>();
 
+
   constructor() {
     this.planeICAOs = genPlaneIcaos(PLANES_ICAO_COUNT);
     this.historyService = new PlanesHistoryService();

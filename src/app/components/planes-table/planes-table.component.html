@@ -1,9 +1,9 @@
-<div class="dashboard-item" >
+<div class="planes-table" >
 
     <h1>{{tableTitle}}</h1>
     <h2>Latest positions</h2>
 
-    <div class="dashboard-item__filter-placeholder">
+    <div class="planes-table__filter-placeholder">
         @if(filterByICAO()){
             <form class="filter-form">
                 <input 
@@ -14,7 +14,7 @@
         }
     </div>
 
-    <div class="dashboard-item__table"> 
+    <div class="planes-table__table"> 
         <table mat-table [dataSource]="dataSource() | filterPlanesFrames : searchTerm(): maxNumberOfRows()" class="mat-elevation-z8">
         
             <!--- Note that these columns can be defined in any order.
