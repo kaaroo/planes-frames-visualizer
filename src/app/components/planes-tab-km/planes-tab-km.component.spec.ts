@@ -8,9 +8,8 @@ describe('PlanesTabKmComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlanesTabKmComponent]
-    })
-    .compileComponents();
+      imports: [PlanesTabKmComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PlanesTabKmComponent);
     component = fixture.componentInstance;

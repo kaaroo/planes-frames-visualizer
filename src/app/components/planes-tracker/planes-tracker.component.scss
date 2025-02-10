@@ -5,19 +5,14 @@
     flex-wrap: wrap;
     flex-direction: row;
     border: 2px solid lightblue;
+
     > div.planes-tracker-item {
         display: flex; 
         flex-basis: calc(50% - 40px);  
         justify-content: center;
         flex-direction: column; 
-
         border: 2px solid grey;
-
-        // min-width: 45%;
-
         margin: auto;
-
-
     }
 
     .box1 { border-color: lightgrey; }

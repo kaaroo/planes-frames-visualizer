@@ -8,9 +8,8 @@ describe('PlanesTabAlterKmComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlanesTabAlterKmComponent]
-    })
-    .compileComponents();
+      imports: [PlanesTabAlterKmComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PlanesTabAlterKmComponent);
     component = fixture.componentInstance;
