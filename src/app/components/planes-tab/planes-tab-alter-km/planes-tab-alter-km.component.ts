@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { SpeedConversionPlaneFramesPipe } from '../../../pipes/speed-conv-plane-frames.pipe';
 import { PlaneFrameGenerator } from '../../../service/plane-frame-gen.service';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-planes-tab-alter-km',
@@ -15,6 +16,7 @@ import { PlaneFrameGenerator } from '../../../service/plane-frame-gen.service';
     FormsModule,
     FilterPlanesFramesPipe,
     SpeedConversionPlaneFramesPipe,
+    DecimalPipe,
   ],
   templateUrl: './../planes-table/planes-table.component.html',
   styleUrl: './../planes-table/planes-table.component.scss',

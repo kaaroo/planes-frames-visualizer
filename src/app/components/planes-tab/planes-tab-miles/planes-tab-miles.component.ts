@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { SpeedUnit } from '../../../model/planeframe.type';
 import { SpeedConversionPlaneFramesPipe } from '../../../pipes/speed-conv-plane-frames.pipe';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-planes-tab-miles',
@@ -14,6 +15,7 @@ import { SpeedConversionPlaneFramesPipe } from '../../../pipes/speed-conv-plane-
     FormsModule,
     FilterPlanesFramesPipe,
     SpeedConversionPlaneFramesPipe,
+    DecimalPipe,
   ],
   templateUrl: './../planes-table/planes-table.component.html',
   styleUrl: './../planes-table/planes-table.component.scss',

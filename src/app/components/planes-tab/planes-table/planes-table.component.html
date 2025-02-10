@@ -1,8 +1,6 @@
 <div class="planes-table" >
 
     <h1>{{tableTitle}}</h1>
-    <h2>Latest positions</h2>
-
     <div class="planes-table__filter-placeholder">
         @if(filterByICAO()){
             <form class="filter-form">
@@ -15,7 +13,7 @@
     </div>
 
     <div class="planes-table__table"> 
-        <table mat-table [dataSource]="dataSource() | filterPlanesFrames : searchTerm(): maxNumberOfRows() | speedConversionPlaneFrames: speedUnit()" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource() | filterPlanesFrames : searchTerm(): maxNumberOfRows() | speedConversionPlaneFrames: speedUnit() " class="mat-elevation-z8">
         
             <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
@@ -28,26 +26,26 @@
         
             <!-- Alt Column -->
             <ng-container matColumnDef="alt">
-            <th mat-header-cell *matHeaderCellDef> Altitude </th>
+            <th mat-header-cell *matHeaderCellDef> Altitude [m] </th>
             <td mat-cell *matCellDef="let element"> {{element.alt}} </td>
             </ng-container>
         
             <!-- Lat Column -->
             <ng-container matColumnDef="lat">
-            <th mat-header-cell *matHeaderCellDef> Latitude </th>
-            <td mat-cell *matCellDef="let element"> {{element.lat}} </td>
+            <th mat-header-cell *matHeaderCellDef> Latitude [°]</th>
+            <td mat-cell *matCellDef="let element"> {{element.lat | number : '1.4-4'}} </td>
             </ng-container>
         
             <!-- Lon Column -->
             <ng-container matColumnDef="lon">
-            <th mat-header-cell *matHeaderCellDef> Longitude </th>
-            <td mat-cell *matCellDef="let element"> {{element.lon}} </td>
+            <th mat-header-cell *matHeaderCellDef> Longitude [°] </th>
+            <td mat-cell *matCellDef="let element"> {{element.lon | number : '1.4-4'}} </td>
             </ng-container>
         
             <!-- Timestamp Column -->
             <ng-container matColumnDef="speed">
-                <th mat-header-cell *matHeaderCellDef> Speed </th>
-                <td mat-cell *matCellDef="let element"> {{element.speed}} </td>
+                <th mat-header-cell *matHeaderCellDef> Speed [{{speedUnit()}}]</th>
+                <td mat-cell *matCellDef="let element"> {{element.speed | number : '1.2-2'}} </td>
             </ng-container>
         
             <!-- Timestamp Column -->

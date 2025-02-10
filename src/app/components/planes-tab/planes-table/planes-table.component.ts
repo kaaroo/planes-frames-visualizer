@@ -10,6 +10,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { FilterPlanesFramesPipe } from '../../../pipes/filter-planes-frames.pipe';
 import { SpeedConversionPlaneFramesPipe } from '../../../pipes/speed-conv-plane-frames.pipe';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-planes-table',
@@ -19,6 +20,7 @@ import { SpeedConversionPlaneFramesPipe } from '../../../pipes/speed-conv-plane-
     FormsModule,
     FilterPlanesFramesPipe,
     SpeedConversionPlaneFramesPipe,
+    DecimalPipe,
   ],
   templateUrl: './planes-table.component.html',
   styleUrl: './planes-table.component.scss',

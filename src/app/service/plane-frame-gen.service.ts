@@ -4,7 +4,7 @@ import { PlanesHistoryService } from './plane-frame-history.service';
 
 // TODO create constants & utils module and move those to utils
 
-var MAX_SPEED_KM_S = 300000;
+var MAX_SPEED_KM_S = (300000 * 3) / 4;
 var MAX_SPEED_KM_H = 3600 * MAX_SPEED_KM_S;
 var MIN_SPEED_KM_H = 0;
 
