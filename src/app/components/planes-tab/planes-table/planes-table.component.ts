@@ -1,15 +1,15 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 
 import { MatTableModule } from '@angular/material/table';
-import { PlaneFrameGenerator } from '../../service/plane-frame-gen.service';
+import { PlaneFrameGenerator } from '../../../service/plane-frame-gen.service';
 import {
   PlaneFrame,
   PlaneFrameHistoryMap,
   SpeedUnit,
-} from '../../model/planeframe.type';
+} from '../../../model/planeframe.type';
 import { FormsModule } from '@angular/forms';
-import { FilterPlanesFramesPipe } from '../../pipes/filter-planes-frames.pipe';
-import { SpeedConversionPlaneFramesPipe } from '../../pipes/speed-conv-plane-frames.pipe';
+import { FilterPlanesFramesPipe } from '../../../pipes/filter-planes-frames.pipe';
+import { SpeedConversionPlaneFramesPipe } from '../../../pipes/speed-conv-plane-frames.pipe';
 
 @Component({
   selector: 'app-planes-table',
