@@ -29,11 +29,11 @@ export class PlanesTableComponent implements OnInit {
   // filter input
   protected searchTerm = signal('');
   protected filterByICAO = signal<boolean>(false);
-  speedUnit = signal<SpeedUnit>('kph');
+  protected speedUnit = signal<SpeedUnit>('kph');
 
   // table settings
-  tableTitle = 'Planes positions';
-  displayedColumns: string[] = [
+  protected tableTitle = 'Planes positions';
+  protected displayedColumns: string[] = [
     'icao',
     'alt',
     'lat',
@@ -41,11 +41,12 @@ export class PlanesTableComponent implements OnInit {
     'speed',
     'timestamp',
   ];
-  dataSource = signal<PlaneFrame[]>([]);
-  maxNumberOfRows = signal<number>(5);
+
+  protected dataSource = signal<PlaneFrame[]>([]);
+  protected maxNumberOfRows = signal<number>(5);
 
   // services
-  planeFrameGen = inject(PlaneFrameGenerator);
+  protected planeFrameGen = inject(PlaneFrameGenerator);
 
   ngOnInit(): void {
     this.planeFrameGen.historyService.framesSaved.subscribe(

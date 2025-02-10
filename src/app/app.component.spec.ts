@@ -24,8 +24,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h2')?.textContent).toContain(
-      'Planes dashboard'
+    expect(compiled.querySelector('h3')?.textContent).toContain(
+      'Planes on map'
     );
   });
 });
