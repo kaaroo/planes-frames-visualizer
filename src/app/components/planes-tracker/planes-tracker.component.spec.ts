@@ -16,7 +16,25 @@ describe('PlanesTrackerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create dashboard', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#planes-tracker-dashboard')).toBeTruthy();
+  });
+
+  it('should render 2 groups', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(
+      compiled.querySelectorAll('div.planes-tracker-dashboard__group').length ==
+        2
+    ).toBeTrue();
+  });
+
+  it('should render 3 items (for 3 tables)', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(
+      compiled
+        .querySelectorAll('div.planes-tracker-dashboard__group')[1]
+        .querySelectorAll('.planes-tracker-item').length == 3
+    ).toBeTrue();
   });
 });

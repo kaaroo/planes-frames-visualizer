@@ -17,6 +17,12 @@ describe('PlanesMapComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h3').textContent).toContain('Planes on map');
+  });
+
+  it('should contain map', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#map')).toBeTruthy();
   });
 });

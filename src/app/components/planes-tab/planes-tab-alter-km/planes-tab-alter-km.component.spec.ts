@@ -19,4 +19,23 @@ describe('PlanesTabAlterKmComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should not render filter by term', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.filter-form')).toBeFalsy();
+  });
+
+  it('should render speed in [kph]', () => {
+    const compiled = fixture.debugElement.nativeElement;
+
+    const arrayOfHeadersKph = Array.from(compiled.querySelectorAll('th')).find(
+      (el: any) => el.innerHTML.includes('[mph]')
+    );
+    expect(arrayOfHeadersKph).toBeFalsy();
+
+    const arrayOfHeadersMph = Array.from(compiled.querySelectorAll('th')).find(
+      (el: any) => el.innerHTML.includes('[kph]')
+    );
+    expect(arrayOfHeadersMph).toBeTruthy();
+  });
 });
