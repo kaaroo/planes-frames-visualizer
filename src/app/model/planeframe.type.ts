@@ -15,3 +15,5 @@ export type PlaneFrameHistoryMap = {
     [key: string] : PlaneFrame[]
 }
 
+export type SpeedUnit = 'kph' | 'mph'
+
